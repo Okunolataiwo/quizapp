@@ -1,0 +1,349 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: #0977e5;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.start,
+.instructions,
+.template {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.start .start-btn {
+    border: none;
+    color: #0977e5;
+    font-weight: 600;
+    font-size: 20px;
+    background: white;
+    padding: 20px 25px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .5s ease;
+    /* display: none; */
+}
+
+.instructions.active {
+    display: block;
+}
+
+.start-btn.active {
+    display: none;
+}
+
+.start .start-btn:hover {
+    background: #0977e5;
+    color: white;
+}
+
+.instructions {
+    width: 40%;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .instructions {
+        width: 70%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .instructions {
+        width: 90%;
+    }
+}
+
+.instructions .header {
+    padding: 20px 25px;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+}
+
+.instructions .body {
+    padding: 10px 25px;
+}
+
+.instructions .body span {
+    font-weight: 600;
+    color: #0977e5;
+}
+
+.instructions .footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 25px;
+    border-top: 1px solid grey;
+    gap: .5rem;
+}
+
+.instructions .footer button {
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: none;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.instructions .footer .exit {
+    color: #0977e5;
+    border: 1px solid #0977e5;
+}
+
+.instructions .footer .continue {
+    color: white;
+    background: #0977e5;
+}
+
+.instructions .footer .exit:hover {
+    color: white;
+    background: #0977e5;
+}
+
+.instructions .footer .continue:hover {
+    color: white;
+    background: #539ae1;
+}
+
+.template {
+    width: 40%;
+    border-radius: 5px;
+    background: white;
+    display: none;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.template.active {
+    display: block;
+}
+
+@media screen and (max-width: 900px) {
+    .template {
+        width: 70%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .template {
+        width: 90%;
+    }
+}
+
+.template .templatehead {
+    padding: 15px 25px;
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.3);
+}
+
+.template .templatehead .head-title {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.template .templatehead .timer {
+    display: flex;
+    background: #369cea8a;
+    padding: 5px 10px;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.template .templatehead .timer .text {
+    font-size: 17px;
+}
+
+.template .templatehead .timer .num {
+    background: black;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+.template .templatehead .loader {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #0977e5;
+    left: 0;
+    top: 100%;
+}
+
+.template .templatebody {
+    padding: 5px 25px;
+}
+
+.template .templatebody .answers {
+    display: flex;
+    flex-direction: column;
+}
+
+.template .templatebody .answers .ans {
+    border: 1px solid #0977e5;
+    margin-top: .5rem;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    outline: none;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 17px;
+    padding: 8px;
+    transition: .5s linear;
+}
+
+
+.template .templatebody .answers .ans.answered.success {
+    background: #088871;
+    border: 1px solid #088871;
+    color: white;
+}
+
+.template .templatebody .answers .ans.answered.error {
+    background: #bd3030;
+    border: 1px solid #bd3030;
+    color: white;
+}
+
+.template .templatebody .answers .ans:hover {
+    background: #0977e5;
+    color: white;
+}
+
+.template .templatebody .answers .ans .icon {
+    font-size: 23px;
+}
+
+.template .templatebody .answers .ans .success {
+    color: green;
+}
+
+.template .templatebody .answers .ans .error {
+    color: rgb(208, 45, 45);
+}
+
+.template .templatebody .answers .ans.disabled{
+    cursor: not-allowed;
+}
+
+.template .templatebody .answers .ans.disabled:hover{
+    background: white;
+    color: black;
+}
+.template .templatefooter {
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    margin-top: 2rem;
+    border-top: 1px solid rgb(212, 200, 200);
+    justify-content: space-between;
+}
+
+.template .templatefooter .numberofQuestions {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.template .templatefooter .next button {
+    padding: 15px;
+    border: none;
+    background: #0977e5;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all .5s ease;
+}
+
+.template .templatefooter .next button.disabled {
+    cursor: not-allowed;
+}
+
+.template .templatefooter .next button:hover {
+    background: #0caccdcf;
+}
+
+
+/* Scores container styling */
+.result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+}
+.result .fa-crown{
+    color: #0066ff;
+    font-size: 100px;
+}
+.result p{
+    font-size: 20px;
+}
+.result p:last-of-type{
+    margin-top: -18px;
+}
+.result p span{
+    color: #0977e5;
+}
+
+.result .endBtn{
+    background: white;
+    border: 1px solid #0977e5;
+    outline: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0977e5;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.result .endBtn:hover{
+    color: white;
+    border: none;
+    background: #0977e5;
+}
+
+.congrats-message{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px;
+    font-size: 15px;
+}
+.congrats-message a{
+    text-decoration: none;
+    color: white;
+    background: #0977e5;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 1s ease;
+}
+
+.congrats-message a:hover{
+    color: blue;
+    background: white;
+    border: 1px solid #0977e5;
+}
