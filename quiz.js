@@ -232,7 +232,7 @@ function showScores() {
     let congrats = `
         <div class="congrats-message">
             <h2>Thanks For writing My quiz</h2>
-            <a href="quiz.html">Retake Quiz</a>
+            <a href="index.html">Retake Quiz</a>
         </div>
                 `
     let quizCont = document.querySelector('.template');
